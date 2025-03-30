@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   aria-hidden="true"
+   role="img"
+   class="iconify iconify--logos"
+   width="31.88"
+   height="32"
+   preserveAspectRatio="xMidYMid meet"
+   viewBox="0 0 256 257"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="vite.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="24.15625"
+     inkscape:cx="9.6041397"
+     inkscape:cy="15.958603"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6"
+     inkscape:export-bgcolor="#ffffff05" />
+  <defs
+     id="defs5">
+    <rect
+       x="10.432083"
+       y="3.767141"
+       width="4.6364812"
+       height="6.3751617"
+       id="rect10" />
+    <linearGradient
+       id="IconifyId1813088fe1fbc01fb466"
+       x1="-.828%"
+       x2="57.636%"
+       y1="7.652%"
+       y2="78.411%">
+      <stop
+         offset="0%"
+         stop-color="#41D1FF"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#BD34FE"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="IconifyId1813088fe1fbc01fb467"
+       x1="43.376%"
+       x2="50.316%"
+       y1="2.242%"
+       y2="89.03%">
+      <stop
+         offset="0%"
+         stop-color="#FFEA83"
+         id="stop3" />
+      <stop
+         offset="8.333%"
+         stop-color="#FFDD35"
+         id="stop4" />
+      <stop
+         offset="100%"
+         stop-color="#FFA800"
+         id="stop5" />
+    </linearGradient>
+  </defs>
+  <text
+     xml:space="preserve"
+     style="font-size:96.375px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:171.29;display:inline;fill:#000000;stroke-width:8.03125"
+     x="33.228966"
+     y="105.39327"
+     id="text6"><tspan
+       x="33.228966"
+       y="105.39327"
+       id="tspan10"><tspan
+         dx="0 81.22229 57.410889 93.739746 58.493225 41.128784 57.034424"
+         id="tspan9">Memory
+</tspan></tspan><tspan
+       x="33.228966"
+       y="225.86202"
+       id="tspan12"><tspan
+         dx="0 74.728271 57.88147 93.739746"
+         id="tspan11">Game</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:96.375px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:8.03125"
+     x="173.86415"
+     y="123.67917"
+     id="text8"><tspan
+       sodipodi:role="line"
+       id="tspan8"
+       style="stroke-width:8.03125"
+       x="173.86415"
+       y="123.67917" /></text>
+  <text
+     xml:space="preserve"
+     transform="matrix(8.03125,0,0,8.03125,-0.01812163,0)"
+     id="text10"
+     style="font-size:5.33333px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect10);display:inline;fill:#000000" />
+  <rect
+     style="fill:#ffffff;stroke-width:8.03125"
+     id="rect1"
+     width="255.67009"
+     height="256.66754"
+     x="0.31434745"
+     y="-0.33247352" />
+  <rect
+     style="fill:#ff0000;stroke-width:8.03125"
+     id="rect2"
+     width="228.4075"
+     height="111.71022"
+     x="13.613185"
+     y="135.31566" />
+  <text
+     xml:space="preserve"
+     style="font-size:53.5417px;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;stroke-width:8.03125"
+     x="125.3234"
+     y="48.873222"
+     id="text5"><tspan
+       sodipodi:role="line"
+       id="tspan5"
+       style="font-size:53.5417px;fill:#000000;stroke-width:8.03125"
+       x="125.3234"
+       y="48.873222">Memory</tspan><tspan
+       sodipodi:role="line"
+       style="font-size:53.5417px;fill:#000000;stroke-width:8.03125"
+       x="125.3234"
+       y="115.80035"
+       id="tspan6">Game</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:107.083px;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;stroke-width:8.03125"
+     x="129.31305"
+     y="233.39458"
+     id="text7"><tspan
+       sodipodi:role="line"
+       id="tspan7"
+       style="font-size:107.083px;stroke-width:8.03125"
+       x="129.31305"
+       y="233.39458">GB</tspan></text>
+</svg>
