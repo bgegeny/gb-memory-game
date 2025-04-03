@@ -4,7 +4,7 @@ import { faGear, faRotate, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Modal, Box, TextField, Typography, Button } from "@mui/material";
 import { RootState } from "../../redux/store";
 import { resetCards } from "../../redux/slices/deckSlice";
-import { reset } from "../../redux/slices/gameSlice";
+import { reset, pauseGame, resumeGame } from "../../redux/slices/gameSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 const Menu: React.FC = () => {
@@ -16,16 +16,19 @@ const Menu: React.FC = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const handleRestart = () => {
+    dispatch(resumeGame());
     dispatch(resetCards(numberOfPairs));
     dispatch(reset());
     setIsSettingsOpen(false);
   };
 
   const handleOpen = () => {
+    dispatch(pauseGame());
     setIsSettingsOpen(true);
   };
 
   const handleClose = () => {
+    dispatch(resumeGame());
     setIsSettingsOpen(false);
   };
 

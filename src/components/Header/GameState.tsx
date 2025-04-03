@@ -6,16 +6,19 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 const GameState: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { countdown, matches, mistakes } = useAppSelector(
+  const { countdown, matches, mistakes, isPaused } = useAppSelector(
     (state: RootState) => state.game
   );
 
   useEffect(() => {
     if (countdown > 0) {
-      const timer = setTimeout(() => dispatch(decrementCountdown()), 1000);
+      const timer = setTimeout(
+        () => !isPaused && dispatch(decrementCountdown()),
+        1000
+      );
       return () => clearTimeout(timer);
     }
-  }, [countdown, dispatch]);
+  }, [countdown, dispatch, isPaused]);
 
   return (
     <div>

@@ -6,6 +6,7 @@ interface GameState {
   numberOfPairs: number;
   matches: number;
   mistakes: number;
+  isPaused: boolean; // Added isPaused property
 }
 
 const initialState: GameState = {
@@ -14,6 +15,7 @@ const initialState: GameState = {
   numberOfPairs: 24,
   matches: 0,
   mistakes: 0,
+  isPaused: false, // Initialize isPaused
 };
 
 const gameSlice = createSlice({
@@ -34,6 +36,12 @@ const gameSlice = createSlice({
       state.matches = 0;
       state.mistakes = 0;
     },
+    pauseGame(state) {
+      state.isPaused = true;
+    },
+    resumeGame(state) {
+      state.isPaused = false;
+    },
   },
 });
 
@@ -42,5 +50,7 @@ export const {
   incrementMatches,
   incrementMistakes,
   reset,
+  pauseGame,
+  resumeGame,
 } = gameSlice.actions;
 export default gameSlice.reducer;
