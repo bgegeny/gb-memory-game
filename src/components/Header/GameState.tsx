@@ -21,15 +21,15 @@ const GameState: React.FC = () => {
   }, [countdown, dispatch, isPaused]);
 
   return (
-    <div>
-      <div>
-        <strong>Countdown:</strong> {countdown}s
-      </div>
-      <div>
-        <strong>Matches:</strong> {matches}
-      </div>
-      <div>
-        <strong>Mistakes:</strong> {mistakes}
+    <div className="game-state-container">
+      <div className="countdown-counter">{countdown}</div>
+      <div className="matches-mistakes">
+        <div>
+          <strong>{matches} matches</strong>
+        </div>
+        <div>
+          <strong>{mistakes} mistakes</strong>
+        </div>
       </div>
     </div>
   );
