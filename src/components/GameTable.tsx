@@ -1,38 +1,16 @@
 import React from "react";
+import { RootState } from "../redux/store";
+import Card from "./Card";
+import { useAppSelector } from "../redux/hooks";
 
-interface GameTableProps {
-  rows: number;
-  columns: number;
-  onCardClick: (row: number, column: number) => void;
-  cards: string[][];
-}
+const GameTable: React.FC = () => {
+  const cards = useAppSelector((state: RootState) => state.deck.cards);
 
-const GameTable: React.FC<GameTableProps> = ({
-  rows,
-  columns,
-  onCardClick,
-  cards,
-}) => {
   return (
     <div className="game-table">
-      <table>
-        <tbody>
-          {Array.from({ length: rows }).map((_, rowIndex) => (
-            <tr key={rowIndex}>
-              {Array.from({ length: columns }).map((_, colIndex) => (
-                <td
-                  key={colIndex}
-                  onClick={() => onCardClick(rowIndex, colIndex)}
-                >
-                  {cards[rowIndex] && cards[rowIndex][colIndex]
-                    ? cards[rowIndex][colIndex]
-                    : ""}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {cards.map((card: { id: number }) => (
+        <Card key={card.id} id={card.id} />
+      ))}
     </div>
   );
 };
