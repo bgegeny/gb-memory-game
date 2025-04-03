@@ -15,8 +15,10 @@ const Card: React.FC<CardProps> = ({ id }) => {
   const card = useAppSelector((state: RootState) =>
     state.deck.cards.find((c) => c.id === id)
   );
+  const counter = useAppSelector((state: RootState) => state.game.countdown);
 
   const handleClick = () => {
+    if (counter <= 0) return;
     setHovered(false);
     if (!card?.flipped && !card?.matched) {
       dispatch(flipCard(id));
