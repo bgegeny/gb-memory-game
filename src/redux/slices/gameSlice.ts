@@ -11,7 +11,7 @@ interface GameState {
 const initialState: GameState = {
   duration: 10,
   countdown: 10,
-  numberOfPairs: 12,
+  numberOfPairs: 24,
   matches: 0,
   mistakes: 0,
 };
