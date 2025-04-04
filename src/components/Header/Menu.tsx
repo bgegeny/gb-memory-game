@@ -1,36 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear, faRotate, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Modal, Box, TextField, Typography, Button } from "@mui/material";
-import { RootState } from "../../redux/store";
-import { resetCards } from "../../redux/slices/deckSlice";
-import { reset, pauseGame, resumeGame } from "../../redux/slices/gameSlice";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { Modal, Box, Typography, Button, Input } from "@mui/material";
+import { useInitMenu } from "../../hooks/useInitMenu";
 
 const Menu: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const numberOfPairs = useAppSelector(
-    (state: RootState) => state.game.numberOfPairs
-  );
-
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-
-  const handleRestart = () => {
-    dispatch(resumeGame());
-    dispatch(resetCards(numberOfPairs));
-    dispatch(reset());
-    setIsSettingsOpen(false);
-  };
-
-  const handleOpen = () => {
-    dispatch(pauseGame());
-    setIsSettingsOpen(true);
-  };
-
-  const handleClose = () => {
-    dispatch(resumeGame());
-    setIsSettingsOpen(false);
-  };
+  const {
+    durationInput,
+    numberOfPairsInput,
+    isSettingsOpen,
+    setDurationInput,
+    setNumberOfPairsInput,
+    handleRestart,
+    handleOpen,
+    handleClose,
+  } = useInitMenu();
 
   return (
     <div className="menu">
@@ -51,7 +35,6 @@ const Menu: React.FC = () => {
       <Modal
         open={isSettingsOpen}
         onClose={handleClose}
-        className="settings-modal"
         aria-labelledby="settings-modal-title"
         aria-describedby="settings-modal-description"
       >
@@ -65,55 +48,59 @@ const Menu: React.FC = () => {
               size="2x"
             />
           </div>
-          <div className="modal-container">
-            <div className="input-container">
-              <Typography mt="10px">Number of pair of cards:</Typography>
-              <TextField
-                variant="outlined"
-                size="small"
-                type="number"
-                value={numberOfPairs}
-                className="number-of-pairs-input"
-                onChange={(e) => {
-                  const value = parseInt(e.target.value, 10);
-                  if (!isNaN(value)) {
-                    // Handle number of pairs change
-                  }
-                }}
-              />
-            </div>
-            <div className="input-container">
-              <Typography mt="10px">Countdown time (sec.):</Typography>
-              <TextField
-                variant="outlined"
-                size="small"
-                type="number"
-                value={numberOfPairs}
-                className="number-of-pairs-input"
-                onChange={(e) => {
-                  const value = parseInt(e.target.value, 10);
-                  if (!isNaN(value)) {
-                    // Handle number of pairs change
-                  }
-                }}
-              />
-            </div>
-            <div className="button-container">
-              <Button
-                variant="contained"
-                color="error"
-                onClick={handleRestart}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: "50px",
-                  width: "70%",
-                }}
-              >
-                Save Settings
-              </Button>
-            </div>
+          <div className="input-container">
+            <Typography>Number of pair of cards:</Typography>
+            <Input
+              inputProps={{
+                min: 1,
+                max: 72,
+              }}
+              size="small"
+              type="number"
+              value={numberOfPairsInput}
+              className="modal-input"
+              onChange={(e) => {
+                const value = parseInt(e.target.value, 10);
+                if (!isNaN(value)) {
+                  setNumberOfPairsInput(value);
+                }
+              }}
+            />
+          </div>
+          <div className="input-container">
+            <Typography>Countdown time (sec.):</Typography>
+            <Input
+              inputProps={{
+                min: 1,
+                max: 120,
+              }}
+              size="small"
+              type="number"
+              value={durationInput}
+              className="modal-input"
+              onChange={(e) => {
+                const value = parseInt(e.target.value, 10);
+                if (!isNaN(value)) {
+                  setDurationInput(value);
+                }
+              }}
+            />
+          </div>
+          <div className="button-container">
+            <Button
+              variant="contained"
+              color="error"
+              onClick={handleRestart}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "50px",
+                width: "70%",
+              }}
+            >
+              Save Settings
+            </Button>
           </div>
         </Box>
       </Modal>

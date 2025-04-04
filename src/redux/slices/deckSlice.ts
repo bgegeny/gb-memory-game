@@ -1,18 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { emojis } from "../../constants/constants";
 import { shuffleArray } from "../../utils/cardHelpers";
-
-interface Card {
-  id: number;
-  emoji: string; // Emoji for the card front
-  flipped: boolean;
-  matched: boolean;
-}
-
-interface CardState {
-  cards: Card[];
-  flippedCards: number[]; // IDs of currently flipped cards
-}
+import { Card, CardState } from "../interfaces/IDeckSlice";
 
 const initializeCards = (numberOfPairs: number): Card[] => {
   const shuffledEmojis = shuffleArray(emojis).slice(0, numberOfPairs);

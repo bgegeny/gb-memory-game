@@ -1,10 +1,9 @@
 import React from "react";
-import { RootState } from "../redux/store";
 import Card from "./Card";
-import { useAppSelector } from "../redux/hooks";
+import { useInitGameTable } from "../hooks/useInitGameTable";
 
 const GameTable: React.FC = () => {
-  const cards = useAppSelector((state: RootState) => state.deck.cards);
+  const { cards } = useInitGameTable();
 
   return (
     <div className="game-table">
