@@ -1,0 +1,28 @@
+.game-state-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.countdown-counter {
+  height: 52px;
+  font-size: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #ff3f56;
+  text-align: center;
+  padding-right: 10px;
+  border-right: 2px solid #a4a4a4;
+}
+
+.matches-mistakes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  height: 52px;
+  padding-left: 10px;
+  gap: 10px; // Added gap for spacing
+}

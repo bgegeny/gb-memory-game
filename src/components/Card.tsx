@@ -1,32 +1,14 @@
-import React, { useState } from "react";
-import { RootState } from "../redux/store";
-import { flipCard, checkMatch } from "../redux/slices/deckSlice";
+import React from "react";
 import cardBack from "../assets/images/card-back.png";
 import cardBackHovered from "../assets/images/card-back-hovered.png";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useInitCard } from "../hooks/useInitCard";
 
 interface CardProps {
   id: number;
 }
 
 const Card: React.FC<CardProps> = ({ id }) => {
-  const [hovered, setHovered] = useState(false);
-  const dispatch = useAppDispatch();
-  const card = useAppSelector((state: RootState) =>
-    state.deck.cards.find((c) => c.id === id)
-  );
-  const counter = useAppSelector((state: RootState) => state.game.countdown);
-
-  const handleClick = () => {
-    if (counter <= 0) return;
-    setHovered(false);
-    if (!card?.flipped && !card?.matched) {
-      dispatch(flipCard(id));
-      setTimeout(() => {
-        dispatch(checkMatch());
-      }, 1000);
-    }
-  };
+  const { card, hovered, setHovered, handleClick } = useInitCard(id);
 
   return (
     <div

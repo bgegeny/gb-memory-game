@@ -1,24 +1,9 @@
 // filepath: src/components/Header/GameData.tsx
-import React, { useEffect } from "react";
-import { RootState } from "../../redux/store";
-import { decrementCountdown } from "../../redux/slices/gameSlice";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import React from "react";
+import { useGameState } from "../../hooks/useInitGameState";
 
 const GameState: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const { countdown, matches, mistakes, isPaused } = useAppSelector(
-    (state: RootState) => state.game
-  );
-
-  useEffect(() => {
-    if (countdown > 0) {
-      const timer = setTimeout(
-        () => !isPaused && dispatch(decrementCountdown()),
-        1000
-      );
-      return () => clearTimeout(timer);
-    }
-  }, [countdown, dispatch, isPaused]);
+  const { countdown, matches, mistakes } = useGameState();
 
   return (
     <div className="game-state-container">

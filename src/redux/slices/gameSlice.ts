@@ -1,21 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-interface GameState {
-  duration: number;
-  countdown: number;
-  numberOfPairs: number;
-  matches: number;
-  mistakes: number;
-  isPaused: boolean; // Added isPaused property
-}
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { GameState, IGameResetAction } from "../interfaces/IGameSlice";
+import {
+  DEFAULT_DURATION,
+  DEFAULT_NUMBER_OF_PAIRS,
+} from "../../constants/constants";
 
 const initialState: GameState = {
-  duration: 10,
-  countdown: 10,
-  numberOfPairs: 24,
+  duration: DEFAULT_DURATION,
+  countdown: DEFAULT_DURATION,
+  numberOfPairs: DEFAULT_NUMBER_OF_PAIRS,
   matches: 0,
   mistakes: 0,
-  isPaused: false, // Initialize isPaused
+  isPaused: false,
 };
 
 const gameSlice = createSlice({
@@ -31,8 +27,10 @@ const gameSlice = createSlice({
     incrementMistakes(state) {
       state.mistakes += 1;
     },
-    reset(state) {
-      state.countdown = state.duration;
+    reset(state, action: PayloadAction<IGameResetAction>) {
+      state.duration = action.payload.duration;
+      state.countdown = action.payload.duration;
+      state.numberOfPairs = action.payload.numberOfPairs;
       state.matches = 0;
       state.mistakes = 0;
     },
